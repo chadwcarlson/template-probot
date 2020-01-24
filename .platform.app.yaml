@@ -26,5 +26,5 @@ mounts:
 
 web:
   commands:
-    start: "node main.js"
+    start: "node -r main.js dotenv_config_path=run/.env"
     # start: "npm start"
