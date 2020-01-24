@@ -1,7 +1,7 @@
 # Probot GitHub Apps for Platform.sh
 
 <p align="center">
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/chadwcarlson/template-probot/master/.platform.template.yaml">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/chadwcarlson/template-probot/updates/.platform.template.yaml">
     <img src="https://platform.sh/images/deploy/lg-blue.svg" alt="Deploy on Platform.sh" width="180px" />
 </a>
 </p>
