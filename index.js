@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'run/.env' })
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
