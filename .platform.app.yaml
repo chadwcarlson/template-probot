@@ -11,7 +11,7 @@ type: 'nodejs:12'
 
 variables:
     env:
-        DOTENV_CONFIG_PATH: 'run/.env'
+        DOTENV_CONFIG_PATH: '/app/run/'
 
 disk: 256
 # The following block defines a single writable directory, 'web/uploads'
