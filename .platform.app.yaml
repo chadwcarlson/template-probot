@@ -11,7 +11,10 @@ type: 'nodejs:12'
 
 variables:
     env:
-        DOTENV_CONFIG_PATH: '/app/run'
+        DOTENV_CONFIG_PATH: '/app/run/.env'
+
+hooks:
+  deploy: touch run/.env
 
 disk: 256
 # The following block defines a single writable directory, 'web/uploads'
