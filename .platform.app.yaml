@@ -9,12 +9,12 @@ name: app
 # to find the supported versions for the 'nodejs' type.
 type: 'nodejs:12'
 
-variables:
-    env:
-        DOTENV_CONFIG_PATH: '/app/run/.env'
-
-hooks:
-  deploy: touch run/.env
+# variables:
+#     env:
+#         DOTENV_CONFIG_PATH: '/app/run/.env'
+# 
+# hooks:
+#   deploy: touch run/.env
 
 disk: 256
 # The following block defines a single writable directory, 'web/uploads'
@@ -29,5 +29,5 @@ mounts:
 
 web:
   commands:
-    start: "npm start"
-    # start: "node -r main.js dotenv_config_path=run/.env"
+    start: "node -r dotenv/config main.js dotenv_config_path=/app/run/.env"
+    # start: "npm start"
