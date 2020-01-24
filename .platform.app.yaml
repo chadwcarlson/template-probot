@@ -26,4 +26,5 @@ mounts:
 
 web:
   commands:
-    start: "npm start"
+    start: "node main.js"
+    # start: "npm start"
