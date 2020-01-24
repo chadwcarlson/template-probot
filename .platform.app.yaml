@@ -12,7 +12,7 @@ type: 'nodejs:12'
 # variables:
 #     env:
 #         DOTENV_CONFIG_PATH: '/app/run/.env'
-# 
+#
 # hooks:
 #   deploy: touch run/.env
 
@@ -29,5 +29,5 @@ mounts:
 
 web:
   commands:
-    start: "node -r dotenv/config main.js dotenv_config_path=/app/run/.env"
-    # start: "npm start"
+    start: "npm start"
+    # start: "node -r dotenv/config main.js dotenv_config_path=/app/run/.env"
