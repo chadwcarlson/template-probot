@@ -11,7 +11,7 @@ type: 'nodejs:12'
 
 variables:
     env:
-        DOT_ENV_PATH: 'run/.env'
+        DOTENV_CONFIG_PATH: 'run/.env'
 
 disk: 256
 # The following block defines a single writable directory, 'web/uploads'
@@ -26,5 +26,5 @@ mounts:
 
 web:
   commands:
-    start: "node -r main.js dotenv_config_path=run/.env"
-    # start: "npm start"
+    start: "npm start"
+    # start: "node -r main.js dotenv_config_path=run/.env"
