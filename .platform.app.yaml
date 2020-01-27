@@ -9,7 +9,6 @@ hooks:
         ln -s run/.env .env
     fi
     chmod +x getwebhook_url.sh
-  deploy: |
     . getwebhook_url.sh
 
 disk: 256
