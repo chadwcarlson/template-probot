@@ -8,8 +8,9 @@ hooks:
         touch .platform.installed
         ln -s run/.env .env
     fi
+    chmod +x getwebhook_url.sh
   deploy: |
-    node getwebhook_url.js
+    . getwebhook_url.sh
 
 disk: 256
 
