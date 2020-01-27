@@ -8,8 +8,6 @@ hooks:
         touch .platform.installed
         ln -s run/.env .env
     fi
-  deploy: |
-    export NODE_ENV='production'
 
 disk: 256
 
