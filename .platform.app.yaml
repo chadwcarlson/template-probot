@@ -5,14 +5,13 @@ type: 'nodejs:12'
 hooks:
   build: |
     if [ ! -f .platform.installed ]; then
-        mkdir tmp && touch tmp/.env
-        ln -s tmp/.env .env
         touch .platform.installed
+        ln -s run/.env .env
     fi
-  deploy: |
-    if [ ! -f run/.env ]; then
-        mv tmp/.env run/.env
-    fi
+  # deploy: |
+  #   if [ ! -f run/.env ]; then
+  #       ln -s run/.env .env
+  #   fi
 
 disk: 256
 
