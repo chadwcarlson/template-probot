@@ -129,7 +129,7 @@ default_permissions:
 # name: My Probot App
 
 # The homepage of your GitHub App.
-# url: https://example.com/
+url: https://example.com/
 
 # A description of the GitHub App.
 # description: A description of my awesome app
