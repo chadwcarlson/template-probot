@@ -3,7 +3,7 @@ name: app
 type: 'nodejs:12'
 
 hooks:
-  deploy: |
+  build: |
     if [ ! -f run/.platform.installed ]; then
         touch run/.platform.installed
         ln -s run/.env .env
