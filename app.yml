@@ -126,13 +126,13 @@ default_permissions:
 
 
 # The name of the GitHub App. Defaults to the name specified in package.json
-name: template-probot-dev
+# name: template-probot-dev
 
 # The homepage of your GitHub App.
 # url: ${WEBHOOK_PROXY_URL}
 
 # A description of the GitHub App.
-description: Test description
+# description: Test description
 
 # Set to true when your GitHub App is available to the public or false when it is only accessible to the owner of the app.
 # Default: true
