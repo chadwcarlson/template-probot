@@ -3,10 +3,15 @@ name: app
 type: 'nodejs:12'
 
 hooks:
+  build: |
+    if [ ! -f .platform.installed ]; then
+        mkdir tmp
+        ln -s tmp/.env .env
+        touch .platform.installed
+    fi
   deploy: |
-    if [ ! -f run/.platform.installed ]; then
-        ln -s run/.env .env
-        touch run/.platform.installed
+    if [ ! -f .platform.installed ]; then
+        mv tmp/.env run/.env
     fi
 
 disk: 256
