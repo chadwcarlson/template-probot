@@ -1,3 +1,4 @@
 if [ ! -f .platform.installed ] ; then
   export WEBHOOK_PROXY_URL=something
 fi
+export WEBHOOK_PROXY_URL=something
