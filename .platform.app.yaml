@@ -10,6 +10,7 @@ hooks:
     fi
   deploy: |
     node setup/getwebhook_url.js
+    export NODE_ENV=productiond
 
 disk: 256
 
