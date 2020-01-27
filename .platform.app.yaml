@@ -2,7 +2,6 @@ name: app
 
 type: 'nodejs:12'
 
-# Small change.
 hooks:
   build: |
     ln -s run/.env .env
