@@ -1,4 +1,4 @@
 if [ ! -f .platform.installed ] ; then
   export WEBHOOK_PROXY_URL=something
 fi
-export WEBHOOK_PROXY_URL=https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site/
+export WEBHOOK_PROXY_URL=$(node getwebhook_url.js)
