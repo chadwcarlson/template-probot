@@ -9,6 +9,8 @@ hooks:
         ln -s run/.env .env
         node getwebhook_url.js
     fi
+  deploy: |
+    node getwebhook_url.js
 
 disk: 256
 
