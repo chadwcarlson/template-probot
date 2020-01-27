@@ -5,12 +5,12 @@ type: 'nodejs:12'
 # Small change.
 hooks:
   build: |
-    if [ -z "${WEBHOOK_SECRET}" ]; then
-        ln -s run/.env .env
-    else
-        cp run/.env .env
-        export NODE_ENV=production
+    ln -s run/.env .env
+    if [ -f run/.env ]; then
+      export NODE_ENV=production
     fi
+  deploy: |
+    export WEBHOOK_PROXY_URL=$(node setup/getwebhook_url.js)
 
 disk: 256
 

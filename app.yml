@@ -129,7 +129,7 @@ default_permissions:
 # name: template-probot-dev
 
 # The homepage of your GitHub App.
-# url: ${WEBHOOK_PROXY_URL}
+# url: https://example.com
 
 # A description of the GitHub App.
 # description: Test description
