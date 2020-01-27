@@ -8,10 +8,6 @@ hooks:
         touch .platform.installed
         ln -s run/.env .env
     fi
-  # deploy: |
-  #   if [ ! -f run/.env ]; then
-  #       ln -s run/.env .env
-  #   fi
 
 disk: 256
 
@@ -23,4 +19,3 @@ mounts:
 web:
   commands:
     start: "npm start"
-    # start: "node -r dotenv/config main.js dotenv_config_path=/app/run/.env"
