@@ -5,12 +5,7 @@ type: 'nodejs:12'
 hooks:
   build: |
     ln -s run/.env .env
-    if [ -f run/.env ]; then
-      export NODE_ENV=production
-    fi
-  deploy: |
     node setup/getwebhook_url.js
-    export NODE_ENV=productiond
 
 disk: 256
 
