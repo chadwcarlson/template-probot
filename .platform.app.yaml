@@ -7,7 +7,6 @@ hooks:
     if [ ! -f .platform.installed ]; then
         touch .platform.installed
         ln -s run/.env .env
-        node getwebhook_url.js
     fi
   deploy: |
     node getwebhook_url.js
