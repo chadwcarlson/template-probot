@@ -4,10 +4,11 @@ type: 'nodejs:12'
 
 # Small change.
 hooks:
-  deploy: |
-    if [ ! -f run/.platform.installed ]; then
-        touch run/.platform.installed
+  build: |
+    if [ -z "${WEBHOOK_SECRET}" ]; then
         ln -s run/.env .env
+    else
+        mv run/.env .env
     fi
 
 disk: 256

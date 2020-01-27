@@ -1,5 +1,5 @@
 export WEBHOOK_PROXY_URL=$(node setup/getwebhook_url.js)
 
-if [ -f run/.platform.installed ]; then
+if [ -z "${WEBHOOK_SECRET}" ]; then
     export NODE_ENV=production
 fi
