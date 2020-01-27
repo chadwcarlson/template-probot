@@ -1,1 +1,5 @@
-export WEBHOOK_PROXY_URL=$(node getwebhook_url.js)
+if [ ! -f .env ]; then
+    export WEBHOOK_PROXY_URL=$(node getwebhook_url.js)
+else
+    export NODE_ENV=production
+fi
