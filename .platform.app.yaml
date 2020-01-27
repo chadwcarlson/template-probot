@@ -5,8 +5,8 @@ type: 'nodejs:12'
 # Small change.
 hooks:
   build: |
-    if [ ! -f .env ]; then
-        touch .platform.installed
+    if [ ! -f run/.platform.installed ]; then
+        touch run/.platform.installed
         ln -s run/.env .env
     fi
 
