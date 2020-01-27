@@ -9,7 +9,7 @@ hooks:
         ln -s run/.env .env
     fi
   deploy: |
-    export WEBHOOK_PROXY_URL="$(node getwebhook_url.js)"
+    export NODE_ENV=production
 
 disk: 256
 
