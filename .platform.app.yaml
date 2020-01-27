@@ -9,7 +9,7 @@ hooks:
         ln -s run/.env .env
     fi
   deploy: |
-    export NODE_ENV=production
+    export NODE_ENV='production'
 
 disk: 256
 
