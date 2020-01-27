@@ -8,8 +8,8 @@ hooks:
         touch .platform.installed
         ln -s run/.env .env
     fi
-    chmod +x getwebhook_url.sh
-    . getwebhook_url.sh
+  deploy: |
+    export WEBHOOK_PROXY_URL="$(node getwebhook_url.js)"
 
 disk: 256
 
