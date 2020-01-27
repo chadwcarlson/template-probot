@@ -9,7 +9,7 @@ hooks:
       export NODE_ENV=production
     fi
   deploy: |
-    export WEBHOOK_PROXY_URL=$(node setup/getwebhook_url.js)
+    node setup/getwebhook_url.js
 
 disk: 256
 
