@@ -2,6 +2,7 @@ name: app
 
 type: 'nodejs:12'
 
+# Small change.
 hooks:
   build: |
     if [ ! -f .env ]; then
