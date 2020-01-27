@@ -10,7 +10,7 @@ hooks:
         touch .platform.installed
     fi
   deploy: |
-    if [ ! -f .platform.installed ]; then
+    if [ ! -f run/.env ]; then
         mv tmp/.env run/.env
     fi
 
