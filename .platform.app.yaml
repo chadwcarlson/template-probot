@@ -5,7 +5,7 @@ type: 'nodejs:12'
 hooks:
   build: |
     if [ ! -f .platform.installed ]; then
-        mkdir tmp
+        mkdir tmp && touch tmp/.env
         ln -s tmp/.env .env
         touch .platform.installed
     fi
