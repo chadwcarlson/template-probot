@@ -12,7 +12,7 @@ module.exports = app => {
 
   app.on('issues.opened', async context => {
     // const issueComment = context.issue({ body: steps.issue_comment })
-    const issueComment = context.issue({ body: "Thanks for opening this issue using Platform.sh!" })
+    const issueComment = context.issue({ body: "Boo-ya! Thanks for opening this issue using the Platform.sh Probot template!" })
     return context.github.issues.createComment(issueComment)
   })
 
