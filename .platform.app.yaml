@@ -5,7 +5,11 @@ type: 'nodejs:12'
 hooks:
   build: |
     ln -s run/.env .env
-    
+    mv app.yml probot.app.yml
+    ln -s run/app.yml app.yml
+  deploy: |
+    node setup/setwebhook_url.js
+
 disk: 256
 
 mounts:
