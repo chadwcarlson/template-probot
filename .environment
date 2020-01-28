@@ -1,1 +1,2 @@
 export WEBHOOK_PROXY_URL=$(node setup/getwebhook_url.js)
+export NODE_ENV="production"

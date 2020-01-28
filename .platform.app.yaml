@@ -5,8 +5,6 @@ type: 'nodejs:12'
 hooks:
   build: |
     ln -s run/.env .env
-  deploy: |
-    export NODE_ENV='production'
 
 disk: 256
 
