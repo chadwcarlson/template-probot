@@ -9,10 +9,11 @@ module.exports = app => {
   app.log('Yay, the app was loaded!')
 
   // var steps = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
+  var platformsh = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
 
   app.on('issues.opened', async context => {
     // const issueComment = context.issue({ body: steps.issue_comment })
-    const issueComment = context.issue({ body: "Boo-ya! Thanks for opening this issue using the Platform.sh Probot template!" })
+    const issueComment = context.issue({ body: platformsh.issue_opened })
     return context.github.issues.createComment(issueComment)
   })
 
