@@ -129,7 +129,11 @@ default_permissions:
 # name: template-probot-dev
 
 # The homepage of your GitHub App.
-url: https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site
+# url: https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site
+
+# The configuration of the GitHub App's webhook
+hook_attributes:
+  url: https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site
 
 # A description of the GitHub App.
 description: |
