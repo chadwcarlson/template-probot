@@ -8,10 +8,10 @@ try {
   fs.writeFileSync('app.yml', yaml.safeDump(doc), function (err) {
     if (err) throw err;
   });
-  var env = `WEBHOOK_PROXY_URL=${config.getPrimaryRoute().url}`;
-  fs.writeFileSync('run/.env', env, function (err) {
-    if (err) throw err;
-  });
+  // var env = `WEBHOOK_PROXY_URL=${config.getPrimaryRoute().url}`;
+  // fs.writeFileSync('run/.env', env, function (err) {
+  //   if (err) throw err;
+  // });
 
 } catch (e) {
   console.log(e);
