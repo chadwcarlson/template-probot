@@ -129,7 +129,7 @@ default_permissions:
 # name: template-probot-dev
 
 # The homepage of your GitHub App.
-# url: https://example.com
+url: https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site
 
 # A description of the GitHub App.
 description: |
@@ -139,7 +139,7 @@ description: |
 
   Once the template is initialized, the installer will direct you to register the app with GitHub. After that, it is set up to leave a welcome message comment on each newly opened issue for each repository it has been installed on.
 
-  Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions. 
+  Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions.
 
 # Set to true when your GitHub App is available to the public or false when it is only accessible to the owner of the app.
 # Default: true

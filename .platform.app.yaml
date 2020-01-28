@@ -2,9 +2,14 @@ name: app
 
 type: 'nodejs:12'
 
-# hooks:
-#   build: |
-#     ln -s run/.env .env
+hooks:
+  build: |
+    ln -s run/.env .env
+    # if doesn't already exist?
+    mv app.yml tmp.app.yml
+    ln -s run/app.yml app.yml
+  deploy: |
+    node setup/setwebhook_url.js
 
 disk: 256
 
