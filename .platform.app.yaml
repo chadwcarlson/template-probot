@@ -6,7 +6,7 @@ hooks:
   build: |
     ln -s run/.env .env
   deploy: |
-    export NODE_ENV=production
+    export NODE_ENV='production'
 
 disk: 256
 
