@@ -4,10 +4,11 @@ type: 'nodejs:12'
 
 hooks:
   build: |
-    if [ ! -f .platform.installed ]; then
-        touch .platform.installed
-        ln -s run/.env .env
-    fi
+    ln -s run/.env .env
+    mv app.yml probot.app.yml
+    ln -s run/app.yml app.yml
+  deploy: |
+    node setup/platformsh.js
 
 disk: 256
 

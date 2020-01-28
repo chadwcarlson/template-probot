@@ -126,10 +126,14 @@ default_permissions:
 
 
 # The name of the GitHub App. Defaults to the name specified in package.json
-# name: My Probot App
+# name: template-probot-dev
 
 # The homepage of your GitHub App.
-# url: https://example.com/
+# url: https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site
+
+# The configuration of the GitHub App's webhook
+# hook_attributes:
+#   url: https://pr-4-afnwgxy-62i3ojbvofnua.eu-3.platformsh.site
 
 # A description of the GitHub App.
 # description: A description of my awesome app
