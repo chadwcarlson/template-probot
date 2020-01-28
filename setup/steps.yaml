@@ -1,0 +1,62 @@
+issue_opened: |
+  ![divider](https://platform.sh/images/cta/hands.svg?sanitize=true)
+
+  <p><h3 align="center">Success! <br><br>You've deployed your first GitHub App <br>using Probot on Platform.sh!</h3></p><br>
+
+  ### Final production setup
+
+  We have one final step to set up our production GitHub application on Platform.sh, and it all has to do with development environments. Ideally, we want to keep our configuration set for the `master` environment of our app, but have the ability to register and create a new app to run a staging and/or development version to test new features.
+
+  In order to ensure that none of the configurations we create on these development environments override our production configuration, we'll need to set the variables defined in your `.env` file as [environment variables](https://docs.platform.sh/configuration/app/variables.html) on your Platform.sh `master` environment.
+
+  ```
+  platform variable:create env:AUTHOR --level project --value Juan
+  ```
+
+
+  Until you do so, the `.env` file can be overwritten by anyone with access to that environment.
+
+  ### Next steps
+
+  Now that you're registered on GitHub and have installed the app on this repository, you can see how Platform.sh development environments can help you test updates to your application.
+
+  1. **Clone the application locally**
+
+      In your Platform.sh management console for the `master` environment, there will be a dropdown button labeled `GIT`. Click that button and copy the clone command, which will look something like this, based on how you set up the project:
+
+       ```
+      git clone <PROJECT ID>@git.<REGION>.platform.sh:<PROJECT ID>.git <PROJECT NAME>
+      ```
+
+      Run the command in your terminal and clone the application. Next, create a new branch `updates` that we will use to add features to the application that require additional permissions.
+
+       ```
+       cd <PROJECT NAME>
+       git checkout -b updates
+       ```
+
+  2. **Update `.environment`**
+
+       At the end of our `master` setup, we set `NODE_ENV=production` so that it could start receiving deliveries from GitHub. Our `updates` environment will be its own webhook proxy, and it will need to be registered as its own GitHub App in order for us to test. For now, set the environment to `development` and commit it.
+
+       ```
+       echo 'export NODE_ENV="development"' > .environment
+       git add .environment && git commit -m "Set NODE_ENV to development to register."
+       ```
+
+  3. **Update the application**
+
+       The template application comes by default with the following permissions:
+
+       ```yaml
+       default_events:
+          - issues
+       default_permissions:
+          issues: write
+          metadata: read
+       ```
+
+       As you can see, its permissions are restricted to *Read/Write access to Issues*, and nothing else. Let's say that I want to add more features to my application. Let's say that I want this to be a general purpose bot to be used by my company that displays important information not just when new issues are opened,  but also when *new pull requests* are opened as well. In order to accomplish this, we will have to update
+
+       * permissions in our `app.yml` file to include `pull_requests`.
+       * our application code will also need to be updated to do something in response to a newly opened pull request.

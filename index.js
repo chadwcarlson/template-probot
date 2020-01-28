@@ -1,3 +1,5 @@
+const yaml = require('js-yaml');
+const fs   = require('fs');
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
@@ -6,8 +8,10 @@ module.exports = app => {
   // Your code here
   app.log('Yay, the app was loaded!')
 
+  var steps = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
+
   app.on('issues.opened', async context => {
-    const issueComment = context.issue({ body: 'Thanks for opening this issue!' })
+    const issueComment = context.issue({ body: steps.issue_comment })
     return context.github.issues.createComment(issueComment)
   })
 
