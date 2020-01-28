@@ -35,7 +35,7 @@ Probot is a framework for building GitHub Apps in Node.js.
 
 3. **Verify**
 
-    Return to the advanced settings for your application (`https://github.com/settings/apps/<APPLICATION_NAME>/advanced`) and click **Redeliver** to repeat the failed delivery described above. Since you have set up the app for production, it should now show a `200` successful response.
+    Return to the advanced settings for your application (`https://github.com/settings/apps/<APPLICATION_NAME>/advanced`). Expand the previous failed delivery by clicking the three dots, and then click **Redeliver** and then **Yes, repeat this delivery** to repeat the delivery. Since you have set up the app for production, it should now show a `200` successful response.
 
 4. **Test on a repository**
 

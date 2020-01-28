@@ -8,10 +8,11 @@ module.exports = app => {
   // Your code here
   app.log('Yay, the app was loaded!')
 
-  var steps = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
+  // var steps = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
 
   app.on('issues.opened', async context => {
-    const issueComment = context.issue({ body: steps.issue_comment })
+    // const issueComment = context.issue({ body: steps.issue_comment })
+    const issueComment = context.issue({ body: "Thanks for opening this issue using Platform.sh!" })
     return context.github.issues.createComment(issueComment)
   })
 
