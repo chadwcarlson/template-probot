@@ -1,0 +1,1 @@
+export WEBHOOK_PROXY_URL=$(node setup/getwebhook_url.js)

@@ -4,7 +4,6 @@ type: 'nodejs:12'
 
 hooks:
   build: |
-    node setup/getwebhook_url.js
     ln -s run/.env .env
 
 disk: 256
