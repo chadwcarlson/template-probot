@@ -5,6 +5,3 @@ npm-debug.log
 .env
 coverage
 run/
-set_vars.sh
-test.js
-result.md

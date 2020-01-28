@@ -8,7 +8,7 @@ hooks:
     mv app.yml probot.app.yml
     ln -s run/app.yml app.yml
   deploy: |
-    node setup/setwebhook_url.js
+    node setup/platformsh.js
 
 disk: 256
 
