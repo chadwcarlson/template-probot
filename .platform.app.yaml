@@ -2,9 +2,9 @@ name: app
 
 type: 'nodejs:12'
 
-hooks:
-  build: |
-    ln -s run/.env .env
+# hooks:
+#   build: |
+#     ln -s run/.env .env
 
 disk: 256
 
