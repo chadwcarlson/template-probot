@@ -132,7 +132,14 @@ default_permissions:
 # url: https://example.com
 
 # A description of the GitHub App.
-# description: Test description
+description: |
+  # GitHub/Probot App Template for Platform.sh
+
+  This is a basic template for setting up a production-ready GitHub App using Probot on Platform.sh.
+
+  Once the template is initialized, the installer will direct you to register the app with GitHub. After that, it is set up to leave a welcome message comment on each newly opened issue for each repository it has been installed on.
+
+  Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions. 
 
 # Set to true when your GitHub App is available to the public or false when it is only accessible to the owner of the app.
 # Default: true
