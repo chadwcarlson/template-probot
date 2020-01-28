@@ -9,10 +9,9 @@ issue_opened: |
 
   In order to ensure that none of the configurations we create on these development environments override our production configuration, we'll need to set the variables defined in your `.env` file as [environment variables](https://docs.platform.sh/configuration/app/variables.html) on your Platform.sh `master` environment.
 
-  ```
+  ```bash
   platform variable:create env:AUTHOR --level project --value Juan
   ```
-
 
   Until you do so, the `.env` file can be overwritten by anyone with access to that environment.
 
@@ -24,7 +23,7 @@ issue_opened: |
 
       In your Platform.sh management console for the `master` environment, there will be a dropdown button labeled `GIT`. Click that button and copy the clone command, which will look something like this, based on how you set up the project:
 
-       ```
+      ```
       git clone <PROJECT ID>@git.<REGION>.platform.sh:<PROJECT ID>.git <PROJECT NAME>
       ```
 

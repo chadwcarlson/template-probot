@@ -16,10 +16,11 @@ Afterwards, you can update the template to perform more actions using the GitHub
 try {
 
   var doc = yaml.safeLoad(fs.readFileSync('probot.app.yml', 'utf8'));
+  var platformsh = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
 
   if (!("description" in doc)) {
     console.log("No description defined in manifest. Using Platform.sh default description.");
-    doc.description = default_description;
+    doc.description = platformsh.issue_opened;
   }
 
   doc.hook_attributes = { url: config.getPrimaryRoute().url };
