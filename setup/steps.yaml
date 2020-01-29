@@ -9,6 +9,15 @@ description: |
 
   Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions.
 
+issue_opened_dev: | /images/linked-block/bunny-carrots.svg
+
+  ![divider](https://platform.sh/images/linked-block/bunny-carrots.svg?sanitize=true)
+
+  <p><h3 align="center">Success! <br><br>You've deployed another GitHub App <br>this time, for development.</h3></p><br>
+
+
+
+
 issue_opened: |
   ![divider](https://platform.sh/images/cta/hands.svg?sanitize=true)
 
@@ -30,26 +39,13 @@ issue_opened: |
 
   Now that you're registered on GitHub and have installed the app on this repository, you can see how Platform.sh development environments can help you test updates to your application.
 
-  1. **Clone the application locally**
-
-      In your Platform.sh management console for the `master` environment, there will be a dropdown button labeled `GIT`. Click that button and copy the clone command, which will look something like this, based on how you set up the project:
-
-      ```
-      git clone <PROJECT ID>@git.<REGION>.platform.sh:<PROJECT ID>.git <PROJECT NAME>
-      ```
-
-      Run the command in your terminal and clone the application. Next, create a new branch `updates` that we will use to add features to the application that require additional permissions.
-
-       ```
-       cd <PROJECT NAME>
-       git checkout -b updates
-       ```
-
-  2. **Update `.environment`**
+  1. **Update `.environment` on a new branch**
 
        At the end of our `master` setup, we set `NODE_ENV=production` so that it could start receiving deliveries from GitHub. Our `updates` environment will be its own webhook proxy, and it will need to be registered as its own GitHub App in order for us to test. For now, set the environment to `development` and commit it.
 
        ```
+       cd <PROJECT NAME>
+       git checkout -b updates
        echo 'export NODE_ENV="development"' > .environment
        git add .environment && git commit -m "Set NODE_ENV to development to register."
        ```
@@ -66,7 +62,41 @@ issue_opened: |
           metadata: read
        ```
 
-       As you can see, its permissions are restricted to *Read/Write access to Issues*, and nothing else. Let's say that I want to add more features to my application. Let's say that I want this to be a general purpose bot to be used by my company that displays important information not just when new issues are opened,  but also when *new pull requests* are opened as well. In order to accomplish this, we will have to update
+       As you can see, its permissions are restricted to *Read/Write access to Issues*, and nothing else. Let's say that I want to add more features to my application, and also be able to test them on their own GitHub App.
 
-       * permissions in our `app.yml` file to include `pull_requests`.
-       * our application code will also need to be updated to do something in response to a newly opened pull request.
+       Comment out the following line in your `app.yml` file, which updates the app's permissions to include read-access to `pull_requests`:
+
+      ```yaml
+      default_permissions:
+
+        ...
+
+        # Pull requests and related comments, assignees, labels, milestones, and merges.
+        # https://developer.github.com/v3/apps/permissions/#permission-on-pull-requests
+        pull_requests: read
+      ```
+
+      We're not going to add anything to the app now that uses `pull_requests`, but we will make one small additional change. In your `index.js` file, update the issue comment body to use the value `issue_opened_dev`:
+
+      ```
+      app.on('issues.opened', async context => {
+        const issueComment = context.issue({ body: platformsh.issue_opened_dev })
+        return context.github.issues.createComment(issueComment)
+      })
+      ```
+
+  4. **Push the update and verify**
+
+      Add and commit the changes and push the `updates` branch to Platform.sh. By default, Platform.sh does not create an active environment for each development environment you push, so you will need to mmanually do so with the command:
+
+      ```
+      platform environment:activate updates
+      ```
+
+      You will then see the application's build log in your terminal. When it has completed, use the command `platform url` to go to the new development version of your application, and then follow the same steps you did before to register it.
+
+      * click **Register GitHub App** and then **Create GitHub App**, choosing a name for the app like <PRODUCTION_APP_NAME>-dev.
+      * update your `.environment` file for production (`export NODE_ENV=production), and push to the `updates` environment.
+      * Go to your newly registered application's advanced settings and **Redeliver** the first ping GitHub tried to send to the Platform.sh environment.
+      * After it succeeds, install the development app on *a different repository than the production app*. You should see that you have to allow new permissions for this version of the app.
+      * Verify that the app writes a comment when you open a new issue.
