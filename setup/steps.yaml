@@ -9,7 +9,7 @@ description: |
 
   Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions.
 
-issue_opened_dev: | /images/linked-block/bunny-carrots.svg
+issue_opened_dev: | 
 
   ![divider](https://platform.sh/images/linked-block/bunny-carrots.svg?sanitize=true)
 
