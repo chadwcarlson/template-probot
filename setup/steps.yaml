@@ -13,9 +13,9 @@ issue_opened_dev: |
 
   ![divider](https://platform.sh/images/linked-block/bunny-carrots.svg?sanitize=true)
 
-  <p><h3 align="center">Success! <br><br>You've deployed another GitHub App <br>this time, for development.</h3></p><br>
+  <p><h3 align="center">Success! <br><br>You've deployed another GitHub App from Platform.sh<br>this time, for development.</h3></p><br>
 
-  Lorem ipsum, yo.
+  Adds steps here for merge.
 
 issue_opened: |
   ![divider](https://platform.sh/images/cta/hands.svg?sanitize=true)
