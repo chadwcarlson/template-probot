@@ -9,14 +9,13 @@ description: |
 
   Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions.
 
-issue_opened_dev: | 
+issue_opened_dev: |
 
   ![divider](https://platform.sh/images/linked-block/bunny-carrots.svg?sanitize=true)
 
   <p><h3 align="center">Success! <br><br>You've deployed another GitHub App <br>this time, for development.</h3></p><br>
 
-
-
+  Lorem ipsum, yo.
 
 issue_opened: |
   ![divider](https://platform.sh/images/cta/hands.svg?sanitize=true)
