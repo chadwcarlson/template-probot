@@ -62,8 +62,8 @@ Probot is a framework for building GitHub Apps in Node.js.
 
    Expand the previous failed delivery by clicking the three dots, and then click **Redeliver** and then **Yes, repeat this delivery** to repeat the delivery. Since you have set up the app for production, it should now show a `200` successful response.
 
-   Scroll to the bottom of the page and click the "Active" checkbox so that GitHub can start sending more deliveries once it's installed on a repository.
-
+   Scroll to the bottom of the "General" settings page and click the "Active" checkbox so that GitHub can start sending more deliveries once it's installed on a repository.
+   
 6. **Test on a repository**
 
    Visit your application's public page (`https://github.com/apps/APPLICATION_NAME`) and click **Install**. For now, select the **Only select repositories** option and choose a repository to test the application on.
