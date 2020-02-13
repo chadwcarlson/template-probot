@@ -1,24 +1,10 @@
-title: Platform.sh GitHub App Demo (ogccex4tsoeq2)
-
-abbreviation: GHAPP-PSH
-
 description: |
+
   ![divider](https://platform.sh/images/cta/bg-contact.svg?sanitize=true)
 
   # GitHub/Probot App Template for Platform.sh
 
-  This is a basic template for setting up a production-ready GitHub App using Probot on Platform.sh.
-
-  Once the template is initialized, the installer will direct you to register the app with GitHub. After that, it is set up to leave a welcome message comment on each newly opened issue for each repository it has been installed on.
-
-  Afterwards, you can update the template to perform more actions using the GitHub API, including adding additional permissions.
-
-  ## Post-install steps
-
-  1. **Register the App on GitHub**
-  2. **Set up for production**
-  3. **Verify**
-  4. **Test on a repository**
+  Continue to follow the README Post-install steps to set up your app for production.
 
 issue_opened_branch: |
 
