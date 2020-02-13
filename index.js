@@ -11,7 +11,6 @@ module.exports = app => {
   var platformsh = yaml.safeLoad(fs.readFileSync('platformsh/demo/steps.yaml', 'utf8'));
 
   app.on('issues.opened', async context => {
-    // const issueComment = context.issue({ body: steps.issue_comment })
     const issueComment = context.issue({ body: platformsh.issue_opened })
     return context.github.issues.createComment(issueComment)
   })
