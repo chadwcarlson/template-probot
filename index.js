@@ -8,8 +8,7 @@ module.exports = app => {
   // Your code here
   app.log('Yay, the app was loaded!')
 
-  // var steps = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
-  var platformsh = yaml.safeLoad(fs.readFileSync('setup/steps.yaml', 'utf8'));
+  var platformsh = yaml.safeLoad(fs.readFileSync('platformsh/demo/steps.yaml', 'utf8'));
 
   app.on('issues.opened', async context => {
     // const issueComment = context.issue({ body: steps.issue_comment })

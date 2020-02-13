@@ -2,20 +2,25 @@ name: app
 
 type: 'nodejs:12'
 
+# You can remove this block or set to false to not use the demo strings.
+variables:
+    env:
+        PLATFORMSH_DEMO: true
+
 hooks:
-  build: |
-    ln -s run/.env .env
-    mv app.yml probot.app.yml
-    ln -s run/app.yml app.yml
-  deploy: |
-    node setup/platformsh.js
+  build: !include
+    type: string
+    path: platformsh/setup/build.sh
+  deploy: !include
+    type: string
+    path: platformsh/setup/deploy.sh
 
 disk: 256
 
 mounts:
-  'run':
+  'registration':
     source: local
-    source_path: run
+    source_path: registration
 
 web:
   commands:
