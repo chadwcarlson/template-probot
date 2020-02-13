@@ -19,7 +19,7 @@ version: 1
 # Templates are a small amount of information supporting a template URL. Each template is selectable at the project-creation step.
 info:
   # Unique machine name, prefaced by a vendor or organization identifier
-  id: chadwcarlson/template-probot
+  id: chadwcarlson/template-probot-envs
   # The human-readable name of the template.
   name: Probot
   # Human-readable descriptive text for the template. Supports limited HTML.
@@ -47,7 +47,7 @@ info:
 # this key also gets mapped to the appropriate location in project.settings so
 # that the current UI can have its own workflow overridden as well.
 initialize:
-  repository: git://github.com/chadwcarlson/template-probot.git@master
+  repository: git://github.com/chadwcarlson/template-probot-envs.git@master
   config: null
   files: []
   profile: Probot
