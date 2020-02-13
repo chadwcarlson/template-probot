@@ -16,7 +16,7 @@ if [ $CHECK != "undefined" ]; then
     WEBHOOK_PROXY_URL="$(node platformsh/utils/get_url.js)"
 
     # Write a temporary Private Key file in the mount so it can be read.
-    node platformsh/setup/get_privatekey.js
+    node platformsh/utils/get_privatekey.js
 
     # Turn into proper environment vars so we can branch and merge without over-writing anything.
     platform variable:create --level environment --environment $PLATFORM_BRANCH env:APP_ID --value $APP_ID --inheritable false --json false --sensitive false --enabled true --no-wait
