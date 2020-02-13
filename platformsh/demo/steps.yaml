@@ -148,7 +148,7 @@ issue_opened: |
           git clone <PROJECT ID>@git.<REGION>.platform.sh:<PROJECT ID>.git <PROJECT NAME>
           echo 'export NODE_ENV="production"' > .environment
           git add .environment && git commit -m "Set NODE_ENV to production."
-          git push origin master
+          git push origin updates
           ```
        - Platform.sh will detect GitHub's temporary credentials, and then set five environment variables for the environment, which will each trigger a redeployment, so hang tight.
        - When all redeployments have completed, visit the app's **Advanced Settings** page, and re-deliver the first deliver GitHub attempted to make to the environment.
