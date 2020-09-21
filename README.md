@@ -1,3 +1,7 @@
+> ## ARCHIVED
+> 
+> See [the Platform.sh template](https://github.com/platformsh-templates/probot) for the current repo.
+
 # Probot GitHub Apps for Platform.sh
 
 <p align="center">
